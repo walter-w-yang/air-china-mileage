@@ -1,0 +1,153 @@
+{
+  "version": "2026-06-09-v1",
+  "updateNote": "初始版本 - 2026年国航快线规则",
+  "updatedAt": "2026-06-09",
+
+  "routeDistances": {
+    "北京-上海": 1088, "北京-广州": 1905, "北京-深圳": 1965, "北京-成都": 1514,
+    "北京-重庆": 1457, "北京-杭州": 1133, "北京-厦门": 1666, "北京-武汉": 1048,
+    "北京-乌鲁木齐": 2418, "北京-西安": 913, "北京-昆明": 2100, "北京-三亚": 2572,
+    "北京-海口": 2450, "北京-长沙": 1325, "北京-南京": 925, "北京-青岛": 552,
+    "北京-大连": 480, "北京-哈尔滨": 1065, "北京-沈阳": 606, "北京-天津": 117,
+    "北京-济南": 378, "北京-福州": 1547, "北京-贵阳": 1618, "北京-郑州": 603,
+    "北京-太原": 405, "北京-拉萨": 2556, "北京-呼和浩特": 399, "北京-兰州": 1188,
+    "北京-银川": 928, "北京-西宁": 1351, "北京-南宁": 2010, "北京-合肥": 912,
+    "北京-温州": 1365, "北京-无锡": 999, "北京-珠海": 1960,
+    "上海-广州": 1210, "上海-深圳": 1234, "上海-成都": 1660, "上海-重庆": 1444,
+    "上海-北京": 1088, "上海-厦门": 629, "上海-武汉": 645, "上海-西安": 1229,
+    "上海-昆明": 1900, "上海-三亚": 1862, "上海-海口": 1685, "上海-青岛": 600,
+    "上海-大连": 825, "上海-长沙": 850, "上海-南京": 276, "上海-杭州": 164,
+    "上海-哈尔滨": 1660, "上海-沈阳": 1163, "上海-福州": 526, "上海-贵阳": 1386,
+    "上海-天津": 1007, "上海-郑州": 782, "上海-乌鲁木齐": 3290, "上海-南宁": 1470,
+    "成都-北京": 1514, "成都-上海": 1660, "成都-广州": 1244, "成都-深圳": 1327,
+    "成都-杭州": 1488, "成都-天津": 1530, "成都-重庆": 267, "成都-昆明": 549,
+    "成都-西安": 592, "成都-拉萨": 1317, "成都-三亚": 1542, "成都-海口": 1415,
+    "成都-武汉": 850, "成都-长沙": 970, "成都-南京": 1370, "成都-厦门": 1481,
+    "广州-北京": 1905, "广州-上海": 1210, "广州-成都": 1244, "广州-杭州": 1070,
+    "广州-武汉": 840, "广州-西安": 1353, "广州-重庆": 960, "广州-昆明": 960,
+    "深圳-北京": 1965, "深圳-上海": 1234, "深圳-成都": 1327, "深圳-重庆": 1072,
+    "深圳-杭州": 1100, "深圳-武汉": 880, "深圳-西安": 1387, "深圳-天津": 1860,
+    "重庆-北京": 1457, "重庆-上海": 1444, "重庆-广州": 960, "重庆-深圳": 1072,
+    "重庆-成都": 267, "重庆-杭州": 1290, "重庆-武汉": 640, "重庆-西安": 535,
+    "北京-东京": 2100, "北京-首尔": 960, "北京-新加坡": 4478, "北京-曼谷": 3667,
+    "北京-洛杉矶": 9780, "北京-纽约": 11000, "北京-伦敦": 8150, "北京-巴黎": 8230,
+    "北京-法兰克福": 7810, "北京-悉尼": 8920, "北京-墨尔本": 9228, "北京-香港": 1975,
+    "北京-台北": 1718, "北京-澳门": 1960, "北京-迪拜": 5860, "北京-莫斯科": 5790,
+    "上海-东京": 1760, "上海-首尔": 795, "上海-新加坡": 3820, "上海-曼谷": 3054,
+    "上海-洛杉矶": 10460, "上海-纽约": 11870, "上海-伦敦": 9220, "上海-巴黎": 9260,
+    "上海-法兰克福": 8870, "上海-悉尼": 7880, "上海-香港": 1220, "上海-台北": 650,
+    "成都-东京": 3240, "成都-新加坡": 3500, "成都-悉尼": 8730, "成都-伦敦": 8430,
+    "广州-东京": 2930, "广州-新加坡": 2540, "广州-悉尼": 7350, "广州-洛杉矶": 11600
+  },
+
+  "kuaixianRoutes": [
+    ["北京", "上海"], ["北京", "杭州"], ["北京", "成都"], ["北京", "重庆"],
+    ["北京", "广州"], ["北京", "深圳"], ["北京", "厦门"], ["北京", "武汉"],
+    ["北京", "乌鲁木齐"], ["北京", "西安"],
+    ["成都", "杭州"], ["成都", "深圳"], ["成都", "天津"],
+    ["重庆", "深圳"]
+  ],
+
+  "kxBonus": {
+    "CA": {
+      "F": 0.30, "A": 0.30, "J": 0.30, "C": 0.30, "D": 0.30, "Z": 0.30,
+      "R": 0.30, "G": 0.30, "E": 0.30, "Y": 0.30, "V": 0.30,
+      "B": 0.20, "M": 0.20, "U": 0.20, "H": 0.20, "Q": 0.20, "S": 0.20,
+      "W": 0.10, "T": 0.10, "L": 0.10, "K": 0.10, "P": 0.10
+    },
+    "SC": {
+      "J": 0.30, "C": 0.30, "D": 0.30, "Z": 0.30, "R": 0.30, "G": 0.30,
+      "E": 0.30, "Y": 0.30, "V": 0.30,
+      "B": 0.20, "M": 0.20, "U": 0.20, "H": 0.20, "Q": 0.20, "S": 0.20
+    },
+    "ZH": {
+      "W": 0.10, "S": 0.10, "T": 0.10, "L": 0.10, "K": 0.10, "P": 0.10
+    }
+  },
+
+  "memberBonus": {
+    "normal": { "rate": 0, "label": "普通卡" },
+    "silver": { "rate": 0.25, "label": "银卡 +25%" },
+    "gold": { "rate": 0.30, "label": "金卡 +30%" },
+    "platinum": { "rate": 0.50, "label": "白金卡 +50%" },
+    "lifetime": { "rate": 0.50, "label": "终身白金 +50%" }
+  },
+
+  "extraSegActivities": {
+    "none": { "type": "none", "label": "无" },
+    "citic_gold": { "type": "pct", "rate": 0.05, "label": "中信联名卡金卡 +5%" },
+    "citic_plat": { "type": "pct", "rate": 0.15, "label": "中信联名卡白金卡 +15%" },
+    "speedup_eco": { "type": "fixed", "value": 0.50, "label": "加速升级·经济舱 +0.5" },
+    "speedup_bc": { "type": "fixed", "value": 1.00, "label": "加速升级·头等公务 +1.0" },
+    "custom_pct": { "type": "pct", "rate": 0, "label": "自定义百分比" }
+  },
+
+  "cabinData": {
+    "CA_DOMESTIC": [
+      { "cabin": "F", "class": "头等舱", "mileRate": 3.00, "segRate": 3.00, "minMile": 1000 },
+      { "cabin": "A", "class": "头等舱", "mileRate": 2.00, "segRate": 2.00, "minMile": 1000 },
+      { "cabin": "J", "class": "公务舱", "mileRate": 3.00, "segRate": 3.00, "minMile": 800 },
+      { "cabin": "C", "class": "公务舱", "mileRate": 2.00, "segRate": 2.00, "minMile": 800 },
+      { "cabin": "D", "class": "公务舱", "mileRate": 1.50, "segRate": 1.50, "minMile": 800 },
+      { "cabin": "Z", "class": "公务舱", "mileRate": 1.25, "segRate": 1.25, "minMile": 800 },
+      { "cabin": "R", "class": "公务舱", "mileRate": 1.10, "segRate": 1.10, "minMile": 800 },
+      { "cabin": "G", "class": "超级经济舱", "mileRate": 1.10, "segRate": 1.10, "minMile": 500 },
+      { "cabin": "E", "class": "超级经济舱", "mileRate": 0.90, "segRate": 0.90, "minMile": 500 },
+      { "cabin": "Y", "class": "经济舱", "mileRate": 1.10, "segRate": 1.10, "minMile": 500 },
+      { "cabin": "B", "class": "经济舱", "mileRate": 1.00, "segRate": 1.00, "minMile": 500 },
+      { "cabin": "M", "class": "经济舱", "mileRate": 1.00, "segRate": 1.00, "minMile": 500 },
+      { "cabin": "U", "class": "经济舱", "mileRate": 1.00, "segRate": 1.10, "minMile": 500 },
+      { "cabin": "H", "class": "经济舱", "mileRate": 0.75, "segRate": 0.75, "minMile": 500 },
+      { "cabin": "Q", "class": "经济舱", "mileRate": 0.75, "segRate": 0.75, "minMile": 500 },
+      { "cabin": "V", "class": "经济舱", "mileRate": 0.75, "segRate": 0.75, "minMile": 500 },
+      { "cabin": "W", "class": "经济舱", "mileRate": 0.50, "segRate": 0.50, "minMile": 500 },
+      { "cabin": "S", "class": "经济舱", "mileRate": 0.50, "segRate": 0.50, "minMile": 500 },
+      { "cabin": "T", "class": "经济舱", "mileRate": 0.50, "segRate": 0.50, "minMile": 500 },
+      { "cabin": "L", "class": "经济舱", "mileRate": 0.25, "segRate": 0.25, "minMile": 500 },
+      { "cabin": "K", "class": "经济舱", "mileRate": 0.25, "segRate": 0.25, "minMile": 500 },
+      { "cabin": "P", "class": "经济舱", "mileRate": 0.25, "segRate": 0.25, "minMile": 500 },
+      { "cabin": "N", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 },
+      { "cabin": "O", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 },
+      { "cabin": "I", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 },
+      { "cabin": "X", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 }
+    ],
+    "CA_INTL": [
+      { "cabin": "F", "class": "头等舱", "mileRate": 3.00, "segRate": 3.00, "minMile": 1000 },
+      { "cabin": "A", "class": "头等舱", "mileRate": 2.00, "segRate": 2.00, "minMile": 1000 },
+      { "cabin": "J", "class": "公务舱", "mileRate": 2.50, "segRate": 2.50, "minMile": 800 },
+      { "cabin": "C", "class": "公务舱", "mileRate": 2.00, "segRate": 2.00, "minMile": 800 },
+      { "cabin": "D", "class": "公务舱", "mileRate": 1.50, "segRate": 1.50, "minMile": 800 },
+      { "cabin": "Z", "class": "公务舱", "mileRate": 1.25, "segRate": 1.25, "minMile": 800 },
+      { "cabin": "R", "class": "公务舱", "mileRate": 1.25, "segRate": 1.25, "minMile": 800 },
+      { "cabin": "G", "class": "超级经济舱", "mileRate": 1.10, "segRate": 1.10, "minMile": 500 },
+      { "cabin": "E", "class": "超级经济舱", "mileRate": 0.90, "segRate": 0.90, "minMile": 500 },
+      { "cabin": "Y", "class": "经济舱", "mileRate": 1.10, "segRate": 1.10, "minMile": 500 },
+      { "cabin": "B", "class": "经济舱", "mileRate": 1.10, "segRate": 1.10, "minMile": 500 },
+      { "cabin": "M", "class": "经济舱", "mileRate": 1.00, "segRate": 1.00, "minMile": 500 },
+      { "cabin": "U", "class": "经济舱", "mileRate": 0.75, "segRate": 0.75, "minMile": 500 },
+      { "cabin": "H", "class": "经济舱", "mileRate": 0.75, "segRate": 0.75, "minMile": 500 },
+      { "cabin": "Q", "class": "经济舱", "mileRate": 0.75, "segRate": 0.75, "minMile": 500 },
+      { "cabin": "V", "class": "经济舱", "mileRate": 0.75, "segRate": 0.75, "minMile": 500 },
+      { "cabin": "W", "class": "经济舱", "mileRate": 0.50, "segRate": 0.50, "minMile": 500 },
+      { "cabin": "S", "class": "经济舱", "mileRate": 0.50, "segRate": 0.50, "minMile": 500 },
+      { "cabin": "T", "class": "经济舱", "mileRate": 0.50, "segRate": 0.50, "minMile": 500 },
+      { "cabin": "L", "class": "经济舱", "mileRate": 0.25, "segRate": 0.25, "minMile": 500 },
+      { "cabin": "K", "class": "经济舱", "mileRate": 0.25, "segRate": 0.25, "minMile": 500 },
+      { "cabin": "P", "class": "经济舱", "mileRate": 0.25, "segRate": 0.25, "minMile": 500 },
+      { "cabin": "N", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 },
+      { "cabin": "O", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 },
+      { "cabin": "I", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 },
+      { "cabin": "X", "class": "其他", "mileRate": 0, "segRate": 0, "minMile": 0 }
+    ]
+  },
+
+  "airportUpdates": {
+    "广州": {
+      "terminal": "T3",
+      "gate": "T3出发大厅",
+      "vipCounter": "T3 C5-C8",
+      "vipCounterTip": "2026年5月7日起全部转场至T3；经济舱D16-D25；自助托运D42-D47",
+      "_note": "广州白云2026.5.7转场T3"
+    }
+  }
+}
