@@ -409,13 +409,179 @@ table.cabin-table tr.active-row td {
   .member-bonus-row { flex-wrap: wrap; }
   .member-bonus-card { min-width: calc(50% - 4px); }
 }
+
+/* ================== Tab 导航 ================== */
+.tab-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.tab-btn {
+  flex: 1;
+  padding: 14px 8px;
+  background: #fff;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 700;
+}
+.tab-page { display: none; }
+.tab-page.active { display: block; }
+
+/* ================== 保级进度卡 ================== */
+.tier-card {
+  background: linear-gradient(135deg, #1d6fcc 0%, #0a3a72 100%);
+  color: #fff;
+}
+.tier-card .card-title { color: rgba(255,255,255,0.95); }
+.tier-card .icon { background: rgba(255,255,255,0.2) !important; color: #fff !important; }
+.tier-header-row { display:flex; align-items:center; margin-bottom: 10px; }
+.tier-config-btn {
+  margin-left: auto; padding: 4px 12px;
+  background: rgba(255,255,255,0.2); color: #fff;
+  border-radius: 14px; font-size: 12px; cursor: pointer; border: none;
+}
+.tier-cycle { font-size: 12px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
+.tier-progress-row { margin-bottom: 12px; }
+.tier-progress-label { display:flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.85); margin-bottom: 6px; }
+.tier-progress-val { font-weight: 600; color: #fff; }
+.tier-bar { height: 8px; background: rgba(255,255,255,0.18); border-radius: 4px; overflow: hidden; }
+.tier-bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+.tier-bar-fill.mile { background: linear-gradient(90deg, #ffd966, #ffb838); }
+.tier-bar-fill.seg { background: linear-gradient(90deg, #66e0a0, #28b878); }
+.tier-progress-breakdown { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 4px; text-align: right; }
+.tier-remain { display: flex; margin-top: 12px; padding: 12px 0; background: rgba(0,0,0,0.18); border-radius: 10px; }
+.tier-remain-item { flex: 1; text-align: center; }
+.tier-remain-divider { width: 1px; background: rgba(255,255,255,0.25); }
+.tier-remain-label { font-size: 11px; color: rgba(255,255,255,0.7); display: block; }
+.tier-remain-val { font-size: 22px; font-weight: 700; color: #fff; display: block; margin-top: 2px; }
+.tier-remain-val.red { color: #ffb6b6; }
+.tier-achieved { text-align:center; padding: 24px 0; font-size: 18px; font-weight: 700; color: #ffd966; }
+
+/* ================== 保级方案 ================== */
+.tier-plans-tip { font-size: 13px; color: var(--text); margin-bottom: 12px; }
+.tier-plans-emp { color: var(--primary); font-weight: 700; font-size: 16px; }
+.tier-toggle-btn {
+  margin-left: auto; padding: 4px 12px; background: var(--primary-light);
+  color: var(--primary); border: none; border-radius: 14px;
+  font-size: 12px; font-weight: 500; cursor: pointer;
+}
+.tier-plans-compact { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+.tier-plan-mini { background: #f9f9fb; border: 2px solid; border-radius: 10px; padding: 12px; text-align: center; cursor: pointer; }
+.tier-plan-mini:hover { background: #f5f5f7; }
+.tier-plan-mini-title { font-size: 12px; font-weight: 700; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tier-plan-mini-num-wrap { display:flex; align-items: baseline; justify-content: center; gap: 2px; }
+.tier-plan-mini-num { font-size: 28px; font-weight: 800; color: var(--primary); line-height: 1; }
+.tier-plan-mini-unit { font-size: 12px; color: var(--text-secondary); }
+.tier-plan-mini-desc { font-size: 11px; color: var(--text-secondary); margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tier-plans-full { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.tier-plan { background: #f9f9fb; border-radius: 10px; padding: 14px; border-left: 6px solid var(--primary); }
+.tier-plan-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.tier-plan-title { font-size: 14px; font-weight: 700; }
+.tier-plan-price { font-size: 11px; color: var(--text-secondary); }
+.tier-plan-desc { font-size: 12px; color: var(--text); margin-bottom: 2px; }
+.tier-plan-detail { font-size: 11px; color: var(--text-secondary); margin-bottom: 8px; }
+.tier-plan-result { display: flex; align-items: baseline; gap: 4px; }
+.tier-plan-num { font-size: 28px; font-weight: 800; color: var(--primary); }
+.tier-plan-unit { font-size: 11px; color: var(--text-secondary); }
+.tier-plan-total { margin-left: auto; font-size: 11px; color: var(--text-secondary); }
+.tier-collapse-btn { margin-top: 10px; padding: 10px 0; text-align: center; background: #f5f5f7; border-radius: 8px; color: var(--text-secondary); font-size: 13px; cursor: pointer; }
+
+/* ================== 飞行汇总 ================== */
+.summary-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; }
+.summary-card .card-title { color: rgba(255,255,255,0.95); }
+.summary-card .icon { background: rgba(255,255,255,0.2) !important; color: #fff !important; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center; }
+.summary-item { padding: 4px; }
+.summary-val-wrap { font-size: 22px; font-weight: 800; color: #ffd966; }
+.summary-slash { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0 3px; font-weight: 400; }
+.summary-total { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85); }
+.summary-label { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+/* ================== 飞行记录 ================== */
+.flight-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.flight-item { background: #f9f9fb; border-radius: 10px; padding: 12px 14px; }
+.flight-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.flight-date { font-size: 12px; color: var(--text-secondary); font-weight: 500; }
+.flight-actions { display:flex; gap: 6px; }
+.flight-actions .action-btn { padding: 2px 10px; background: #fff; border: 1px solid var(--border); border-radius: 6px; font-size: 11px; color: var(--text-secondary); cursor: pointer; }
+.flight-actions .action-btn.delete:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); }
+.flight-route { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+.flight-city { font-weight: 600; font-size: 15px; }
+.flight-arrow { color: var(--primary); }
+.flight-info { color: var(--text-secondary); font-size: 12px; margin-left: 6px; }
+.flight-stats { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); }
+.flight-stats .stat-val { font-weight: 700; color: var(--text); margin-right: 2px; }
+.add-btn { margin-left: auto; padding: 4px 12px; background: var(--primary); color: #fff; border: none; border-radius: 14px; font-size: 12px; font-weight: 600; cursor: pointer; }
+.sms-btn { margin-left: auto; margin-right: 8px; padding: 4px 12px; background: var(--primary-light); color: var(--primary); border: none; border-radius: 14px; font-size: 12px; font-weight: 500; cursor: pointer; }
+.empty-state { text-align: center; padding: 24px 0; color: var(--text-secondary); font-size: 13px; }
+.empty-icon { font-size: 32px; margin-bottom: 6px; }
+
+/* ================== 模态框 ================== */
+.modal-mask { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 100; display: none; align-items: center; justify-content: center; padding: 16px; }
+.modal-mask.show { display: flex; }
+.modal-panel { background: #fff; border-radius: 14px; width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto; }
+.modal-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.modal-title { font-size: 16px; font-weight: 700; }
+.modal-close { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-secondary); }
+.modal-body { padding: 20px; }
+.modal-footer { padding: 12px 20px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: flex-end; }
+.btn-primary { background: var(--primary); color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary { background: #f0f0f2; color: var(--text); border: none; padding: 10px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; }
+
+/* ================== 保级配置 ================== */
+.tier-settings-label { font-size: 13px; color: var(--text-secondary); margin: 12px 0 8px; }
+.tier-level-options { display: flex; flex-direction: column; gap: 6px; }
+.tier-level-option { padding: 10px 14px; background: #f5f5f7; border: 2px solid transparent; border-radius: 8px; font-size: 13px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.tier-level-option.active { background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-weight: 600; }
+.tier-date-row, .tier-base-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tier-date-row input, .tier-base-row input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; }
+.tier-settings-tip { margin-top: 14px; padding: 12px; background: #f0f9ff; border-radius: 8px; font-size: 11px; color: #1d6fcc; line-height: 1.6; }
+
+/* ================== 短信导入 ================== */
+.sms-tip { padding: 10px 12px; background: #f5f5f7; border-radius: 8px; font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; }
+.sms-textarea { width: 100%; min-height: 140px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-family: inherit; resize: vertical; box-sizing: border-box; }
+.sms-result { margin-top: 14px; padding: 14px; background: #f0f9ff; border: 1px solid #c4e0f5; border-radius: 10px; }
+.sms-result-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.sms-result-item { font-size: 13px; padding: 3px 0; }
+.sms-key { color: var(--text-secondary); display: inline-block; width: 80px; }
+
+/* ================== 机场指南 ================== */
+.airport-city-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.airport-city-chip { padding: 6px 14px; background: #f0f0f2; border: 1px solid var(--border); border-radius: 16px; font-size: 12px; cursor: pointer; }
+.airport-city-chip.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.airport-info-row { padding: 10px 0; border-bottom: 1px dashed var(--border); display: flex; }
+.airport-info-row:last-child { border-bottom: none; }
+.airport-info-key { width: 110px; color: var(--text-secondary); font-size: 13px; }
+.airport-info-val { flex: 1; font-size: 13px; }
+.airport-info-tip { font-size: 11px; color: var(--text-secondary); margin-top: 4px; font-style: italic; }
+.lounge-item { padding: 10px; background: var(--gold-light); border-radius: 8px; margin-bottom: 8px; }
+.lounge-name { font-weight: 700; font-size: 13px; color: var(--gold); margin-bottom: 4px; }
+.lounge-meta { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
+.edit-airport-btn { margin-left: auto; padding: 4px 12px; background: var(--gold-light); color: var(--gold); border: 1px solid var(--gold); border-radius: 14px; font-size: 12px; cursor: pointer; }
+.airport-edit-field { margin-bottom: 12px; }
+.airport-edit-field label { display: block; font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+.airport-edit-field input, .airport-edit-field textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; font-family: inherit; box-sizing: border-box; }
+.airport-edit-field textarea { min-height: 60px; resize: vertical; }
+
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>✈️ 凤凰知音 · 里程计算器</h1>
-  <div class="subtitle">国航系航班里程 & 航段积累查询</div>
+  <h1>✈️ 飞行保级管家</h1>
+  <div class="subtitle">国航凤凰知音 · 里程计算 · 保级跟踪 · 机场速查</div>
   <div class="badges">
     <span class="badge">2026年规则</span>
     <span class="badge">国航快线加成</span>
@@ -423,7 +589,14 @@ table.cabin-table tr.active-row td {
   </div>
 </div>
 
-<div class="container">
+<!-- Tab 导航 -->
+<div class="tab-nav">
+  <button class="tab-btn active" data-tab="mileage">📊 里程计算</button>
+  <button class="tab-btn" data-tab="calendar">📅 飞行日历</button>
+  <button class="tab-btn" data-tab="airport">🏢 机场指南</button>
+</div>
+
+<div class="container tab-page active" id="page-mileage">
 
   <!-- Input Card -->
   <div class="card">
@@ -681,6 +854,160 @@ table.cabin-table tr.active-row td {
   <div style="text-align:center;padding:20px 0;font-size:11px;color:var(--text-secondary);">
     数据来源：国航凤凰知音官网 · 2026年规则<br>
     计算结果仅供参考，具体以实际入账为准
+  </div>
+</div>
+
+<!-- ================== Tab: 飞行日历 ================== -->
+<div class="container tab-page" id="page-calendar">
+
+  <!-- 保级进度卡 -->
+  <div class="card tier-card">
+    <div class="card-title">
+      <span class="icon">🏆</span>
+      <span id="tierTitleText">保级进度 · 金卡</span>
+      <button class="tier-config-btn" onclick="openTierConfig()">⚙️ 设置</button>
+    </div>
+    <div class="tier-cycle" id="tierCycle">周期：2026-06-01 ~ 2027-05-31</div>
+    <div id="tierProgressBody"></div>
+  </div>
+
+  <!-- 保级方案 -->
+  <div class="card" id="tierPlansCard">
+    <div class="card-title">
+      <span class="icon red">🧮</span>
+      保级方案
+      <button class="tier-toggle-btn" onclick="toggleTierPlans()" id="tierToggleBtn">展开全部 ▼</button>
+    </div>
+    <div class="tier-plans-tip" id="tierPlansTip"></div>
+    <div id="tierPlansBody"></div>
+  </div>
+
+  <!-- 飞行汇总 -->
+  <div class="card summary-card">
+    <div class="card-title">
+      <span class="icon">📊</span>
+      飞行汇总
+    </div>
+    <div id="summaryBody"></div>
+  </div>
+
+  <!-- 飞行记录 -->
+  <div class="card">
+    <div class="card-title">
+      <span class="icon red">📅</span>
+      飞行记录
+      <button class="sms-btn" onclick="openSmsImport()">📱 短信导入</button>
+      <button class="add-btn" onclick="openAddFlight()">+ 添加</button>
+    </div>
+    <div id="flightListBody"></div>
+  </div>
+</div>
+
+<!-- ================== Tab: 机场指南 ================== -->
+<div class="container tab-page" id="page-airport">
+  <div class="card">
+    <div class="card-title">
+      <span class="icon gold">🏢</span>
+      选择机场
+    </div>
+    <input type="text" id="airportSearch" placeholder="输入城市名搜索..." style="width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;font-size:14px;margin-bottom:12px;box-sizing:border-box;" oninput="renderAirportCityChips()">
+    <div class="airport-city-row" id="airportCityChips"></div>
+  </div>
+
+  <div class="card" id="airportInfoCard" style="display:none;">
+    <div class="card-title">
+      <span class="icon gold">✈️</span>
+      <span id="airportInfoTitle">机场信息</span>
+      <button class="edit-airport-btn" onclick="toggleAirportEdit()" id="airportEditToggleBtn">编辑</button>
+    </div>
+    <div id="airportInfoDisplay"></div>
+    <div id="airportInfoEdit" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ================== 保级配置模态框 ================== -->
+<div class="modal-mask" id="tierModal">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <div class="modal-title">保级设置</div>
+      <button class="modal-close" onclick="closeTierConfig()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="tier-settings-label">目标等级</div>
+      <div class="tier-level-options" id="tierLevelOptions"></div>
+
+      <div class="tier-settings-label">保级周期</div>
+      <div class="tier-date-row">
+        <div><label style="font-size:11px;color:var(--text-secondary);">起始日期</label><input type="date" id="cfgCycleStart"></div>
+        <div><label style="font-size:11px;color:var(--text-secondary);">结束日期</label><input type="date" id="cfgCycleEnd"></div>
+      </div>
+
+      <div class="tier-settings-label">已有累积（本周期内、未在本工具记录的）</div>
+      <div class="tier-base-row">
+        <div><label style="font-size:11px;color:var(--text-secondary);">已有里程 (km)</label><input type="number" id="cfgBaseMileage" placeholder="0"></div>
+        <div><label style="font-size:11px;color:var(--text-secondary);">已有定级航段</label><input type="number" step="0.01" id="cfgBaseSegments" placeholder="0"></div>
+      </div>
+
+      <div class="tier-settings-tip">
+        💡 国航凤凰知音保级周期为每年6月1日至次年5月31日<br>
+        💡 「已有累积」用于把之前积累、未在本工具记录的里程/航段算进来，后续飞行只需添加记录会自动叠加
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeTierConfig()">取消</button>
+      <button class="btn-primary" onclick="saveTierConfigFromModal()">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================== 添加/编辑飞行记录模态框 ================== -->
+<div class="modal-mask" id="flightModal">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <div class="modal-title" id="flightModalTitle">添加飞行记录</div>
+      <button class="modal-close" onclick="closeFlightModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="airport-edit-field"><label>飞行日期</label><input type="date" id="flightDate"></div>
+      <div class="form-row">
+        <div class="form-group"><label>出发城市</label><input type="text" id="flightDeparture" placeholder="如：北京"></div>
+        <div class="form-group"><label>到达城市</label><input type="text" id="flightArrival" placeholder="如：深圳"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>航班号</label><input type="text" id="flightNumber" placeholder="如：CA1501" style="text-transform:uppercase;"></div>
+        <div class="form-group"><label>舱位代码</label><input type="text" id="flightCabin" placeholder="如：Y" maxlength="2" style="text-transform:uppercase;"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>实际里程 (km)</label><input type="number" id="flightMileage" placeholder="实际入账里程"></div>
+        <div class="form-group"><label>实际定级航段</label><input type="number" step="0.01" id="flightSegment" placeholder="实际入账航段"></div>
+      </div>
+      <div class="airport-edit-field"><label>备注（可选）</label><input type="text" id="flightNote" placeholder="可选备注"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeFlightModal()">取消</button>
+      <button class="btn-primary" onclick="saveFlightFromModal()" id="flightModalSaveBtn">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================== 短信导入模态框 ================== -->
+<div class="modal-mask" id="smsModal">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <div class="modal-title">短信导入飞行记录</div>
+      <button class="modal-close" onclick="closeSmsImport()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="sms-tip">
+        粘贴国航发来的入账短信，自动识别日期、航线、航班号、舱位、里程、定级航段
+      </div>
+      <textarea class="sms-textarea" id="smsText" placeholder="粘贴完整短信内容，例如：&#10;【中国国航】您2026年6月4日乘坐的南京-北京航班(CA1818,P舱),共累积可消费里程650公里,定级航段0.25个..."></textarea>
+      <div id="smsResultBody"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeSmsImport()">取消</button>
+      <button class="btn-primary" onclick="parseSms()">解析</button>
+    </div>
   </div>
 </div>
 
@@ -1386,7 +1713,812 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCabinTable(ZH_DOMESTIC, "zhTableWrap", true);
   renderCabinTable(SC_DOMESTIC, "scTableWrap", true);
   renderKxTable();
+
+  // ========== 初始化三个 Tab ==========
+  setupTabs();
+  loadTierProgress();
+  renderFlightList();
+  renderAirportCityChips();
+
+  // 添加飞行记录弹窗默认日期为今天
+  document.getElementById('flightDate').value = new Date().toISOString().slice(0,10);
 });
+
+// ==================== Tab 切换 ====================
+function setupTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+      document.querySelectorAll('.tab-page').forEach(p => p.classList.toggle('active', p.id === 'page-' + tab));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+// ==================== 本地存储 ====================
+const LS = {
+  flights: 'ac_flights',
+  tierConfig: 'ac_tier_config',
+  airportInfo: 'ac_airport_info',
+};
+function getFlights() {
+  try { return JSON.parse(localStorage.getItem(LS.flights) || '[]'); } catch { return []; }
+}
+function saveFlights(arr) {
+  localStorage.setItem(LS.flights, JSON.stringify(arr));
+}
+function getTierConfig() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(LS.tierConfig) || 'null');
+    if (saved) return saved;
+  } catch {}
+  return { targetTier: 'gold', cycleStart: '2026-06-01', cycleEnd: '2027-05-31', baseMileage: 0, baseSegments: 0 };
+}
+function saveTierConfig(cfg) {
+  localStorage.setItem(LS.tierConfig, JSON.stringify(cfg));
+}
+function getAirportOverrides() {
+  try { return JSON.parse(localStorage.getItem(LS.airportInfo) || '{}'); } catch { return {}; }
+}
+function saveAirportOverrides(obj) {
+  localStorage.setItem(LS.airportInfo, JSON.stringify(obj));
+}
+
+// ==================== 保级常量 ====================
+const TIER_REQUIREMENTS = {
+  silver: { name: '银卡', mileage: 30000, segments: 20 },
+  gold: { name: '金卡', mileage: 70000, segments: 36 },
+  platinum: { name: '白金卡', mileage: 120000, segments: 60 },
+};
+const TIER_OPTIONS = [
+  { value: 'silver', label: '银卡（3万里程或20航段）' },
+  { value: 'gold', label: '金卡（7万里程或36航段）' },
+  { value: 'platinum', label: '白金卡（12万里程或60航段）' },
+];
+const TYPICAL_DISTANCE = 1500; // 平均单程 km（基于常飞航线）
+const PLAN_CABIN_PROFILES = {
+  F: { label: 'F舱（头等）', mileRate: 1.50, segRate: 2.00, kxBonus: 0.30 },
+  A: { label: 'A舱（头等）', mileRate: 1.50, segRate: 2.00, kxBonus: 0.30 },
+  J: { label: 'J舱（公务）', mileRate: 1.50, segRate: 1.50, kxBonus: 0.30 },
+  C: { label: 'C舱（公务）', mileRate: 1.30, segRate: 1.30, kxBonus: 0.30 },
+  D: { label: 'D舱（公务）', mileRate: 1.30, segRate: 1.30, kxBonus: 0.30 },
+  Z: { label: 'Z舱（公务）', mileRate: 1.10, segRate: 1.10, kxBonus: 0.30 },
+  R: { label: 'R舱（公务）', mileRate: 1.10, segRate: 1.10, kxBonus: 0.30 },
+  Y: { label: 'Y舱（经济全价）', mileRate: 1.00, segRate: 1.00, kxBonus: 0.30 },
+  B: { label: 'B舱（经济）', mileRate: 1.00, segRate: 1.00, kxBonus: 0.20 },
+  M: { label: 'M舱（经济）', mileRate: 1.00, segRate: 1.00, kxBonus: 0.20 },
+  U: { label: 'U舱（经济）', mileRate: 1.00, segRate: 1.10, kxBonus: 0.20 },
+  H: { label: 'H舱（经济）', mileRate: 1.00, segRate: 1.00, kxBonus: 0.20 },
+  Q: { label: 'Q舱（经济）', mileRate: 0.75, segRate: 0.75, kxBonus: 0.20 },
+  V: { label: 'V舱（经济）', mileRate: 0.75, segRate: 0.75, kxBonus: 0.30 },
+  W: { label: 'W舱（经济）', mileRate: 0.50, segRate: 0.50, kxBonus: 0.10 },
+  S: { label: 'S舱（经济）', mileRate: 0.50, segRate: 0.50, kxBonus: 0.20 },
+  T: { label: 'T舱（经济）', mileRate: 0.50, segRate: 0.50, kxBonus: 0.10 },
+  L: { label: 'L舱（经济）', mileRate: 0.25, segRate: 0.25, kxBonus: 0.10 },
+  K: { label: 'K舱（经济）', mileRate: 0.25, segRate: 0.25, kxBonus: 0.10 },
+  P: { label: 'P舱（经济）', mileRate: 0.25, segRate: 0.25, kxBonus: 0.10 },
+};
+
+function getSegmentPerFlight(cabin, isKx) {
+  const p = PLAN_CABIN_PROFILES[cabin];
+  if (!p) return { segment: 0 };
+  const kxBonus = isKx ? Math.round(p.segRate * p.kxBonus * 100) / 100 : 0;
+  return { segment: Math.round((p.segRate + kxBonus) * 100) / 100 };
+}
+
+function priceLevelOfCabin(cabin) {
+  const map = {
+    F:'💰💰💰💰💰', A:'💰💰💰💰💰',
+    J:'💰💰💰💰', C:'💰💰💰💰', D:'💰💰💰', Z:'💰💰💰', R:'💰💰💰',
+    Y:'💰💰💰💰', B:'💰💰💰', M:'💰💰💰', U:'💰💰💰', H:'💰💰',
+    Q:'💰💰', V:'💰💰', W:'💰', S:'💰', T:'💰', L:'💰', K:'💰', P:'💰',
+  };
+  return map[cabin] || '💰💰';
+}
+
+function findMostFlownCabin(flights) {
+  const counts = {};
+  flights.forEach(f => { if (f.cabin) { const c = f.cabin.toUpperCase(); counts[c] = (counts[c] || 0) + 1; } });
+  let max = 0, top = null;
+  Object.keys(counts).forEach(c => { if (counts[c] > max) { max = counts[c]; top = c; } });
+  return top;
+}
+
+function calculateTierProgress(flights, cfg) {
+  const req = TIER_REQUIREMENTS[cfg.targetTier] || TIER_REQUIREMENTS.gold;
+  const start = new Date(cfg.cycleStart);
+  const end = new Date(cfg.cycleEnd);
+  const baseM = parseFloat(cfg.baseMileage) || 0;
+  const baseS = parseFloat(cfg.baseSegments) || 0;
+
+  const inCycle = flights.filter(f => {
+    if (!f.date) return false;
+    const d = new Date(f.date);
+    return d >= start && d <= end;
+  });
+
+  let recM = 0, recS = 0;
+  inCycle.forEach(f => {
+    recM += parseFloat(f.actualMileage) || 0;
+    recS += parseFloat(f.actualSegment) || 0;
+  });
+
+  const mileage = baseM + recM;
+  const segments = baseS + recS;
+  const mileagePct = Math.min(100, (mileage / req.mileage) * 100);
+  const segmentPct = Math.min(100, (segments / req.segments) * 100);
+
+  return {
+    requirement: req,
+    mileage: Math.round(mileage),
+    segments: Math.round(segments * 100) / 100,
+    baseMileage: Math.round(baseM),
+    baseSegments: Math.round(baseS * 100) / 100,
+    recordedMileage: Math.round(recM),
+    recordedSegments: Math.round(recS * 100) / 100,
+    hasBase: baseM > 0 || baseS > 0,
+    remainMileage: Math.max(0, req.mileage - mileage),
+    remainSegments: Math.round(Math.max(0, req.segments - segments) * 100) / 100,
+    mileagePct: Math.round(mileagePct * 10) / 10,
+    segmentPct: Math.round(segmentPct * 10) / 10,
+    achieved: mileage >= req.mileage || segments >= req.segments,
+    cycleCount: inCycle.length,
+  };
+}
+
+function generateTierPlans(progress, flights) {
+  const remain = progress.remainSegments;
+  if (remain <= 0) return [];
+  const calc = (cabin, isKx) => {
+    const seg = getSegmentPerFlight(cabin, isKx).segment;
+    if (seg <= 0) return { count: Infinity, totalSegment: 0 };
+    const count = Math.ceil(remain / seg);
+    return { count, totalSegment: Math.round(count * seg * 100) / 100 };
+  };
+
+  const plans = [];
+  const p1 = calc('Y', true);
+  plans.push({ id:'fastest', title:'🚀 最快保级（经济舱）', desc:'Y舱（经济舱全价）+ 国航快线',
+    detail:'每次约 1.3 航段，约 ' + Math.round(TYPICAL_DISTANCE * 1.0) + 'km 入账',
+    flights: p1.count, segmentTotal: p1.totalSegment, pricelevel:'💰💰💰💰 票价高', color:'#c41230' });
+
+  const top = findMostFlownCabin(flights);
+  if (top && PLAN_CABIN_PROFILES[top]) {
+    const px = calc(top, true);
+    const segX = getSegmentPerFlight(top, true).segment;
+    plans.push({ id:'user', title:'🎯 最熟悉路径（你常飞' + top + '舱）',
+      desc: PLAN_CABIN_PROFILES[top].label + ' + 快线',
+      detail: '每次约 ' + segX + ' 航段；按你历史飞行习惯',
+      flights: px.count, segmentTotal: px.totalSegment, pricelevel: priceLevelOfCabin(top), color:'#1d6fcc' });
+  }
+
+  const p3 = calc('V', true);
+  const segV = getSegmentPerFlight('V', true).segment;
+  plans.push({ id:'value', title:'💎 性价比最优（V舱快线）', desc:'V舱（30%快线加成）',
+    detail: '每次约 ' + segV + ' 航段；价格折扣大且贡献接近1段',
+    flights: p3.count, segmentTotal: p3.totalSegment, pricelevel:'💰💰 价格友好', color:'#0a875a' });
+
+  const p4 = calc('S', true);
+  const segS = getSegmentPerFlight('S', true).segment;
+  plans.push({ id:'lowcost', title:'🪙 低价冲量（S舱快线）', desc:'S舱（20%快线加成）',
+    detail: '每次约 ' + segS + ' 航段；票价最便宜，但需要飞较多次',
+    flights: p4.count, segmentTotal: p4.totalSegment, pricelevel:'💰 票价最低', color:'#996600' });
+
+  const vAvg = getSegmentPerFlight('V', true).segment;
+  const yAvg = getSegmentPerFlight('Y', true).segment;
+  const avgSeg = vAvg * 0.6 + yAvg * 0.4;
+  const mixCount = Math.ceil(remain / avgSeg);
+  const yCount = Math.round(mixCount * 0.4);
+  const vCount = mixCount - yCount;
+  plans.push({ id:'mix', title:'⚖️ 平衡组合（V+Y混合）', desc:'60% V舱 + 40% Y舱（都走快线）',
+    detail: '约 ' + vCount + ' 次 V舱 + ' + yCount + ' 次 Y舱，时间和成本平衡',
+    flights: mixCount, segmentTotal: Math.round(mixCount * avgSeg * 100) / 100,
+    pricelevel:'💰💰💰 中等', color:'#7340b3' });
+
+  return plans;
+}
+
+// ==================== 渲染保级进度 ====================
+let TIER_PLANS_EXPANDED = false;
+
+function loadTierProgress() {
+  const cfg = getTierConfig();
+  const flights = getFlights();
+  const progress = calculateTierProgress(flights, cfg);
+  const plans = generateTierPlans(progress, flights);
+
+  // 周期信息
+  document.getElementById('tierTitleText').textContent = '保级进度 · ' + progress.requirement.name;
+  document.getElementById('tierCycle').textContent = '周期：' + cfg.cycleStart + ' ~ ' + cfg.cycleEnd;
+
+  // 进度体
+  const body = document.getElementById('tierProgressBody');
+  if (progress.achieved) {
+    body.innerHTML = '<div class="tier-achieved">🎉 恭喜！已达成 ' + progress.requirement.name + ' 保级标准</div>';
+  } else {
+    const breakdownM = progress.hasBase ? '<div class="tier-progress-breakdown">其中：已有 ' + progress.baseMileage + ' + 本工具 ' + progress.recordedMileage + '</div>' : '';
+    const breakdownS = progress.hasBase ? '<div class="tier-progress-breakdown">其中：已有 ' + progress.baseSegments + ' + 本工具 ' + progress.recordedSegments + '</div>' : '';
+    body.innerHTML =
+      '<div class="tier-progress-row">' +
+        '<div class="tier-progress-label"><span>累计里程</span><span class="tier-progress-val">' + progress.mileage + ' / ' + progress.requirement.mileage + ' km</span></div>' +
+        '<div class="tier-bar"><div class="tier-bar-fill mile" style="width:' + progress.mileagePct + '%"></div></div>' +
+        breakdownM +
+      '</div>' +
+      '<div class="tier-progress-row">' +
+        '<div class="tier-progress-label"><span>定级航段</span><span class="tier-progress-val">' + progress.segments + ' / ' + progress.requirement.segments + ' 段</span></div>' +
+        '<div class="tier-bar"><div class="tier-bar-fill seg" style="width:' + progress.segmentPct + '%"></div></div>' +
+        breakdownS +
+      '</div>' +
+      '<div class="tier-remain">' +
+        '<div class="tier-remain-item"><span class="tier-remain-label">还差里程</span><span class="tier-remain-val">' + progress.remainMileage + ' km</span></div>' +
+        '<div class="tier-remain-divider"></div>' +
+        '<div class="tier-remain-item"><span class="tier-remain-label">还差航段</span><span class="tier-remain-val red">' + progress.remainSegments + ' 段</span></div>' +
+      '</div>';
+  }
+
+  // 方案
+  const plansCard = document.getElementById('tierPlansCard');
+  if (progress.achieved || plans.length === 0) {
+    plansCard.style.display = 'none';
+  } else {
+    plansCard.style.display = '';
+    document.getElementById('tierPlansTip').innerHTML =
+      '还需 <span class="tier-plans-emp">' + progress.remainSegments + '</span> 段' +
+      (TIER_PLANS_EXPANDED ? '，5 种方案任选' : '（默认显示精选 2 种）');
+    document.getElementById('tierToggleBtn').textContent = TIER_PLANS_EXPANDED ? '收起 ▲' : '展开全部 ▼';
+
+    const body2 = document.getElementById('tierPlansBody');
+    if (!TIER_PLANS_EXPANDED) {
+      // 精选 2 个：fastest + (user || value)
+      const highlightIds = ['fastest'];
+      const hasUser = plans.find(p => p.id === 'user');
+      highlightIds.push(hasUser ? 'user' : 'value');
+      const picks = highlightIds.map(id => plans.find(p => p.id === id)).filter(Boolean);
+      body2.innerHTML = '<div class="tier-plans-compact">' + picks.map(p =>
+        '<div class="tier-plan-mini" style="border-color:' + p.color + ';" onclick="toggleTierPlans()">' +
+          '<div class="tier-plan-mini-title" style="color:' + p.color + ';">' + p.title + '</div>' +
+          '<div class="tier-plan-mini-num-wrap"><span class="tier-plan-mini-num">' + p.flights + '</span><span class="tier-plan-mini-unit">次</span></div>' +
+          '<div class="tier-plan-mini-desc">' + p.desc + '</div>' +
+        '</div>'
+      ).join('') + '</div>';
+    } else {
+      body2.innerHTML = '<div class="tier-plans-full">' + plans.map(p =>
+        '<div class="tier-plan" style="border-left-color:' + p.color + ';">' +
+          '<div class="tier-plan-header"><span class="tier-plan-title" style="color:' + p.color + ';">' + p.title + '</span><span class="tier-plan-price">' + p.pricelevel + '</span></div>' +
+          '<div class="tier-plan-desc">' + p.desc + '</div>' +
+          '<div class="tier-plan-detail">' + p.detail + '</div>' +
+          '<div class="tier-plan-result"><span class="tier-plan-num">' + p.flights + '</span><span class="tier-plan-unit">次</span><span class="tier-plan-total">≈ ' + p.segmentTotal + ' 段</span></div>' +
+        '</div>'
+      ).join('') + '<div class="tier-collapse-btn" onclick="toggleTierPlans()">▲ 收起方案</div></div>';
+    }
+  }
+
+  // 飞行汇总（本周期 / 全部）
+  renderFlightSummary(flights, cfg, progress);
+}
+
+function toggleTierPlans() {
+  TIER_PLANS_EXPANDED = !TIER_PLANS_EXPANDED;
+  loadTierProgress();
+}
+
+function renderFlightSummary(flights, cfg, progress) {
+  const start = new Date(cfg.cycleStart);
+  const end = new Date(cfg.cycleEnd);
+  let totalM = 0, totalS = 0;
+  flights.forEach(f => {
+    totalM += parseFloat(f.actualMileage) || 0;
+    totalS += parseFloat(f.actualSegment) || 0;
+  });
+  const totalCount = flights.length;
+  const summary = {
+    count: totalCount, totalMileage: Math.round(totalM), totalSegments: Math.round(totalS * 100) / 100,
+    cycleCount: progress.cycleCount, cycleMileage: progress.recordedMileage, cycleSegments: progress.recordedSegments,
+  };
+
+  const body = document.getElementById('summaryBody');
+  if (totalCount === 0) {
+    body.innerHTML = '<div class="empty-state"><div class="empty-icon">✈️</div>暂无飞行记录，点击下方「+ 添加」或「📱 短信导入」</div>';
+  } else {
+    body.innerHTML = '<div class="summary-grid">' +
+      '<div class="summary-item"><div class="summary-val-wrap"><span>' + summary.cycleCount + '</span><span class="summary-slash">/</span><span class="summary-total">' + summary.count + '</span></div><div class="summary-label">本周期 / 全部 次数</div></div>' +
+      '<div class="summary-item"><div class="summary-val-wrap"><span>' + summary.cycleMileage + '</span><span class="summary-slash">/</span><span class="summary-total">' + summary.totalMileage + '</span></div><div class="summary-label">本周期 / 全部 里程(km)</div></div>' +
+      '<div class="summary-item"><div class="summary-val-wrap"><span>' + summary.cycleSegments + '</span><span class="summary-slash">/</span><span class="summary-total">' + summary.totalSegments + '</span></div><div class="summary-label">本周期 / 全部 航段</div></div>' +
+    '</div>';
+  }
+}
+
+// ==================== 保级配置模态 ====================
+function openTierConfig() {
+  const cfg = getTierConfig();
+  // 等级选项
+  document.getElementById('tierLevelOptions').innerHTML = TIER_OPTIONS.map(opt =>
+    '<div class="tier-level-option ' + (cfg.targetTier === opt.value ? 'active' : '') + '" data-value="' + opt.value + '" onclick="selectTierLevel(\'' + opt.value + '\')">' +
+      '<span>' + opt.label + '</span>' +
+      (cfg.targetTier === opt.value ? '<span>✓</span>' : '') +
+    '</div>'
+  ).join('');
+  document.getElementById('cfgCycleStart').value = cfg.cycleStart;
+  document.getElementById('cfgCycleEnd').value = cfg.cycleEnd;
+  document.getElementById('cfgBaseMileage').value = cfg.baseMileage || '';
+  document.getElementById('cfgBaseSegments').value = cfg.baseSegments || '';
+  document.getElementById('tierModal').classList.add('show');
+}
+function closeTierConfig() { document.getElementById('tierModal').classList.remove('show'); }
+function selectTierLevel(value) {
+  document.querySelectorAll('#tierLevelOptions .tier-level-option').forEach(el => {
+    const match = el.dataset.value === value;
+    el.classList.toggle('active', match);
+    const chk = el.querySelector('span:last-child');
+    if (match && chk && chk.textContent !== '✓') chk.textContent = '✓';
+    if (!match && chk && chk.textContent === '✓') chk.textContent = '';
+  });
+}
+function saveTierConfigFromModal() {
+  const target = document.querySelector('#tierLevelOptions .tier-level-option.active').dataset.value;
+  const cfg = {
+    targetTier: target,
+    cycleStart: document.getElementById('cfgCycleStart').value,
+    cycleEnd: document.getElementById('cfgCycleEnd').value,
+    baseMileage: parseFloat(document.getElementById('cfgBaseMileage').value) || 0,
+    baseSegments: parseFloat(document.getElementById('cfgBaseSegments').value) || 0,
+  };
+  saveTierConfig(cfg);
+  closeTierConfig();
+  loadTierProgress();
+}
+
+// ==================== 飞行记录列表 ====================
+function renderFlightList() {
+  const flights = getFlights();
+  const body = document.getElementById('flightListBody');
+  if (flights.length === 0) {
+    body.innerHTML = '<div class="empty-state"><div class="empty-icon">🛫</div>还没有飞行记录</div>';
+    return;
+  }
+  body.innerHTML = '<div class="flight-list">' + flights.map(f =>
+    '<div class="flight-item">' +
+      '<div class="flight-header">' +
+        '<span class="flight-date">' + (f.date || '') + '</span>' +
+        '<div class="flight-actions">' +
+          '<button class="action-btn" onclick="editFlight(\'' + f.id + '\')">编辑</button>' +
+          '<button class="action-btn delete" onclick="deleteFlight(\'' + f.id + '\')">删除</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="flight-route">' +
+        '<span class="flight-city">' + (f.departure || '?') + '</span>' +
+        '<span class="flight-arrow">✈</span>' +
+        '<span class="flight-city">' + (f.arrival || '?') + '</span>' +
+        '<span class="flight-info">' + (f.flight ? f.flight + ' · ' : '') + (f.cabin ? f.cabin + '舱' : '') + '</span>' +
+      '</div>' +
+      '<div class="flight-stats">' +
+        '<div><span class="stat-val">' + (f.actualMileage || 0) + '</span>里程</div>' +
+        '<div><span class="stat-val">' + (f.actualSegment || 0) + '</span>航段</div>' +
+        (f.note ? '<div style="color:var(--text-secondary);">备注：' + f.note + '</div>' : '') +
+      '</div>' +
+    '</div>'
+  ).join('') + '</div>';
+}
+
+let EDITING_FLIGHT_ID = null;
+function openAddFlight() {
+  EDITING_FLIGHT_ID = null;
+  document.getElementById('flightModalTitle').textContent = '添加飞行记录';
+  document.getElementById('flightDate').value = new Date().toISOString().slice(0, 10);
+  ['flightDeparture','flightArrival','flightNumber','flightCabin','flightMileage','flightSegment','flightNote'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('flightModal').classList.add('show');
+}
+function editFlight(id) {
+  const flights = getFlights();
+  const f = flights.find(x => x.id === id);
+  if (!f) return;
+  EDITING_FLIGHT_ID = id;
+  document.getElementById('flightModalTitle').textContent = '编辑飞行记录';
+  document.getElementById('flightDate').value = f.date || '';
+  document.getElementById('flightDeparture').value = f.departure || '';
+  document.getElementById('flightArrival').value = f.arrival || '';
+  document.getElementById('flightNumber').value = f.flight || '';
+  document.getElementById('flightCabin').value = f.cabin || '';
+  document.getElementById('flightMileage').value = f.actualMileage || '';
+  document.getElementById('flightSegment').value = f.actualSegment || '';
+  document.getElementById('flightNote').value = f.note || '';
+  document.getElementById('flightModal').classList.add('show');
+}
+function closeFlightModal() { document.getElementById('flightModal').classList.remove('show'); }
+
+function saveFlightFromModal() {
+  const date = document.getElementById('flightDate').value;
+  const departure = document.getElementById('flightDeparture').value.trim();
+  const arrival = document.getElementById('flightArrival').value.trim();
+  if (!date || !departure || !arrival) {
+    alert('请填写日期和出发/到达城市');
+    return;
+  }
+  const record = {
+    date,
+    departure,
+    arrival,
+    flight: document.getElementById('flightNumber').value.trim().toUpperCase(),
+    cabin: document.getElementById('flightCabin').value.trim().toUpperCase().slice(0, 2),
+    actualMileage: document.getElementById('flightMileage').value,
+    actualSegment: document.getElementById('flightSegment').value,
+    note: document.getElementById('flightNote').value.trim(),
+  };
+  const flights = getFlights();
+  if (EDITING_FLIGHT_ID) {
+    const idx = flights.findIndex(x => x.id === EDITING_FLIGHT_ID);
+    if (idx >= 0) flights[idx] = { ...flights[idx], ...record };
+  } else {
+    record.id = Date.now().toString();
+    record.createdAt = new Date().toISOString();
+    flights.unshift(record);
+  }
+  saveFlights(flights);
+  closeFlightModal();
+  renderFlightList();
+  loadTierProgress();
+}
+function deleteFlight(id) {
+  if (!confirm('确定要删除这条飞行记录吗？')) return;
+  const flights = getFlights().filter(f => f.id !== id);
+  saveFlights(flights);
+  renderFlightList();
+  loadTierProgress();
+}
+
+// ==================== 短信导入 ====================
+function openSmsImport() {
+  document.getElementById('smsText').value = '';
+  document.getElementById('smsResultBody').innerHTML = '';
+  document.getElementById('smsModal').classList.add('show');
+}
+function closeSmsImport() { document.getElementById('smsModal').classList.remove('show'); }
+
+function parseSmsText(text) {
+  if (!text) return null;
+  const r = { date:'', departure:'', arrival:'', flight:'', cabin:'', actualMileage:'', actualSegment:'' };
+  let m;
+  m = text.match(/(\d{4})\s*[年\-\/.]\s*(\d{1,2})\s*[月\-\/.]\s*(\d{1,2})\s*日?/);
+  if (m) r.date = m[1] + '-' + String(m[2]).padStart(2,'0') + '-' + String(m[3]).padStart(2,'0');
+
+  m = text.match(/乘坐的?([\u4e00-\u9fa5]{2,6})[-—–到至]([\u4e00-\u9fa5]{2,6})航班/);
+  if (!m) m = text.match(/([\u4e00-\u9fa5]{2,6})[-—–]([\u4e00-\u9fa5]{2,6})航班/);
+  if (m) { r.departure = m[1]; r.arrival = m[2]; }
+
+  m = text.match(/航班\s*\(\s*([A-Z]{2}\d{3,4})/);
+  if (!m) m = text.match(/\(([A-Z]{2}\d{3,4})[,，)]/);
+  if (!m) {
+    const all = text.match(/[A-Z]{2}\d{3,4}/g);
+    if (all) {
+      const f = all.filter(c => { const i = text.indexOf(c); return !text.slice(i + c.length, i + c.length + 4).startsWith('***'); });
+      if (f.length) m = [null, f[0]];
+    }
+  }
+  if (m) r.flight = m[1];
+
+  m = text.match(/[,，(\s]([A-Z])\s*舱/);
+  if (!m) m = text.match(/([A-Z])\s*舱/);
+  if (m) r.cabin = m[1];
+
+  m = text.match(/累积(?:可消费)?里程\s*(\d+)\s*公里/);
+  if (!m) m = text.match(/(\d+)\s*公里/);
+  if (m) r.actualMileage = m[1];
+
+  m = text.match(/定级航段\s*([\d.]+)\s*个?/);
+  if (!m) m = text.match(/航段\s*([\d.]+)\s*个/);
+  if (m) r.actualSegment = m[1];
+
+  return r;
+}
+
+function parseSms() {
+  const text = document.getElementById('smsText').value;
+  if (!text.trim()) { alert('请先粘贴短信内容'); return; }
+  const r = parseSmsText(text);
+  if (!r || (!r.date && !r.flight && !r.actualMileage)) { alert('无法识别，请检查短信内容'); return; }
+  document.getElementById('smsResultBody').innerHTML =
+    '<div class="sms-result">' +
+      '<div class="sms-result-title">✅ 解析结果</div>' +
+      '<div class="sms-result-item"><span class="sms-key">日期：</span>' + (r.date || '未识别') + '</div>' +
+      '<div class="sms-result-item"><span class="sms-key">航线：</span>' + (r.departure || '?') + ' → ' + (r.arrival || '?') + '</div>' +
+      '<div class="sms-result-item"><span class="sms-key">航班号：</span>' + (r.flight || '未识别') + '</div>' +
+      '<div class="sms-result-item"><span class="sms-key">舱位：</span>' + (r.cabin || '未识别') + '</div>' +
+      '<div class="sms-result-item"><span class="sms-key">里程：</span>' + (r.actualMileage || '0') + ' 公里</div>' +
+      '<div class="sms-result-item"><span class="sms-key">定级航段：</span>' + (r.actualSegment || '0') + '</div>' +
+      '<div style="display:flex;gap:8px;margin-top:12px;">' +
+        '<button class="btn-primary" style="flex:1;" onclick="saveSmsRecord()">直接保存</button>' +
+        '<button class="btn-secondary" style="flex:1;" onclick="editSmsBeforeSave()">先编辑</button>' +
+      '</div>' +
+    '</div>';
+  window._smsParseResult = r;
+}
+
+function saveSmsRecord() {
+  const r = window._smsParseResult;
+  if (!r) return;
+  if (!r.date || !r.departure || !r.arrival) { alert('关键信息缺失，请点"先编辑"'); return; }
+  const flights = getFlights();
+  flights.unshift({
+    id: Date.now().toString(),
+    createdAt: new Date().toISOString(),
+    date: r.date, departure: r.departure, arrival: r.arrival,
+    flight: r.flight || '', cabin: r.cabin || '',
+    actualMileage: r.actualMileage || '', actualSegment: r.actualSegment || '',
+    note: '短信导入',
+  });
+  saveFlights(flights);
+  closeSmsImport();
+  renderFlightList();
+  loadTierProgress();
+}
+
+function editSmsBeforeSave() {
+  const r = window._smsParseResult;
+  if (!r) return;
+  closeSmsImport();
+  EDITING_FLIGHT_ID = null;
+  document.getElementById('flightModalTitle').textContent = '编辑短信导入记录';
+  document.getElementById('flightDate').value = r.date || new Date().toISOString().slice(0,10);
+  document.getElementById('flightDeparture').value = r.departure || '';
+  document.getElementById('flightArrival').value = r.arrival || '';
+  document.getElementById('flightNumber').value = r.flight || '';
+  document.getElementById('flightCabin').value = r.cabin || '';
+  document.getElementById('flightMileage').value = r.actualMileage || '';
+  document.getElementById('flightSegment').value = r.actualSegment || '';
+  document.getElementById('flightNote').value = '短信导入';
+  document.getElementById('flightModal').classList.add('show');
+}
+
+// ==================== 机场指南 ====================
+const AIRPORT_INFO_DEFAULT = {
+  "北京": {
+    airport: "北京首都国际机场", terminal: "T3",
+    gate: "5号门（金卡F区） / 2号门（白金卡A区）",
+    vipCounter: "T3-C 四层 F区（金卡专用，F20-F29）",
+    vipCounterTip: "🥇 金卡/银卡/星盟金卡/国内两舱：F区（5号门最近）；🏆 白金卡+国际两舱+京沪京杭两舱：A区（2号门）；🚄 京沪京杭快线：B区；T2则在14号门对面",
+    lounge: [
+      { name:"国航头等舱&公务舱休息室（浮岛）", location:"T3-C 三层西侧浮岛", hours:"4:15-末班", features:"热食、饮料、睡眠间、商务区、卫生间" },
+      { name:"国航贵宾休息室（C04）", location:"T3-C 三层 C04登机口附近（京沪快线）", hours:"4:30-22:00", features:"休息区、小吃" },
+      { name:"国航贵宾休息室（T3-D）", location:"T3-D 二层东南侧浮岛", hours:"4:30-23:00", features:"行李存储、商务区、淋浴、吧台" },
+      { name:"国航贵宾休息室（C58）", location:"T3-C 二层 58/59登机口（西指廊北端）", hours:"6:00-20:00", features:"行李存储、商务区、淋浴" },
+    ],
+  },
+  "上海": {
+    airport: "上海虹桥 / 浦东国际机场", terminal: "虹桥T2 / 浦东T2",
+    gate: "虹桥T2-3号门 / 浦东T2-9号门",
+    vipCounter: "虹桥T2 A14-A21（快线A14-17） / 浦东T2 K岛",
+    vipCounterTip: "虹桥：A18-A21两舱/白金/金卡/星盟金；A14-A17国航快线专柜",
+    lounge: [
+      { name:"V3头等舱休息室", location:"虹桥T2 三层 V3", hours:"6:15-21:55", features:"行李存储、商务区、影视区、睡眠区、母婴室、淋浴、按摩椅、VIP间" },
+      { name:"V8休息室", location:"虹桥T2 三层 36号登机口旁", hours:"9:00-21:55", features:"行李存储、商务区、影视区、睡眠区、母婴室、淋浴、按摩椅" },
+      { name:"浦东国内休息室", location:"浦东T2 二层 C90登机口旁", hours:"5:30-22:00", features:"行李存储、商务区、母婴室、吧台" },
+    ],
+  },
+  "广州": {
+    airport: "广州白云国际机场", terminal: "T3",
+    gate: "T3出发大厅", vipCounter: "T3 C5-C8",
+    vipCounterTip: "2026年5月7日起全部转场至T3；经济舱D16-D25；自助托运D42-D47",
+    lounge: [
+      { name:"国航紫宸贵宾休息室", location:"T3 四层西侧（L31）", hours:"首班前90分钟-末班", features:"自助餐、休息区、VIP包间、智能灯光" },
+    ],
+  },
+  "深圳": {
+    airport: "深圳宝安国际机场", terminal: "T3",
+    gate: "3号门/4号门", vipCounter: "T3 C值机岛",
+    vipCounterTip: "尊鹏阁为深航自营，国航金卡/白金可入",
+    lounge: [
+      { name:"尊鹏阁一号厅", location:"安检后 14-19号方向 扶梯下至二层", hours:"航班运行时段", features:"VIP包房、上网、母婴、淋浴、按摩、3D影音室" },
+      { name:"尊鹏阁二号厅", location:"52号登机口旁", hours:"航班运行时段", features:"同上" },
+      { name:"尊鹏阁三号厅", location:"安检后扶梯左侧，20号登机口旁", hours:"航班运行时段", features:"同上" },
+    ],
+  },
+  "成都": {
+    airport: "天府 / 双流国际机场", terminal: "天府T1/T2 / 双流T2",
+    gate: "天府T2出发大厅 / 双流出发大厅",
+    vipCounter: "天府T2 F岛 / 双流T2 R/S/T岛",
+    vipCounterTip: "双流T2三层155号登机口旁有国航两舱休息室",
+    lounge: [
+      { name:"国航头等舱&公务舱休息室（双流）", location:"双流T2 三层 155号登机口旁", hours:"5:00-22:00", features:"行李存储、商务、影视、睡眠、母婴、淋浴、按摩椅" },
+    ],
+  },
+  "重庆": {
+    airport: "重庆江北国际机场", terminal: "T3A",
+    gate: "T3出发大厅", vipCounter: "T3A 02号安检通道旁",
+    vipCounterTip: "02号安检通道下行电梯左后方",
+    lounge: [
+      { name:"国航头等舱&公务舱休息室", location:"T3A 02号安检通道下行电梯左后方", hours:"4:40-22:00", features:"行李存储、商务、影视、淋浴、吧台、按摩椅" },
+    ],
+  },
+  "杭州": {
+    airport: "杭州萧山国际机场", terminal: "T4（国内）/ T1",
+    gate: "T4出发大厅", vipCounter: "T4 N岛",
+    vipCounterTip: "T1也有国航柜台，B87登机口旁有休息室",
+    lounge: [
+      { name:"国航头等舱&公务舱休息室", location:"T1 一层远机位 B87登机口旁", hours:"航班运行时段", features:"休息区、餐食" },
+      { name:"国航贵宾休息室", location:"T1 二层 B09登机口附近", hours:"航班运行时段", features:"休息区、小吃" },
+    ],
+  },
+  "武汉": {
+    airport: "武汉天河国际机场", terminal: "T3",
+    gate: "T3出发大厅", vipCounter: "T3 K岛",
+    vipCounterTip: "K岛12号柜台",
+    lounge: [
+      { name:"国航贵宾休息室", location:"T3-B 安检内东一指廊 50号登机口附近", hours:"航班运行时段", features:"休息区、饮料、小吃" },
+    ],
+  },
+  "西安": {
+    airport: "西安咸阳国际机场", terminal: "T2",
+    gate: "T2 3号门", vipCounter: "T2出发大厅",
+    vipCounterTip: "深航尊鹏阁在17号登机口对面",
+    lounge: [
+      { name:"尊鹏阁", location:"T2 国内出发 3号门 17号登机口对面", hours:"航班运行时段", features:"VIP包房、上网、淋浴、餐食" },
+    ],
+  },
+  "天津": {
+    airport: "天津滨海国际机场", terminal: "T2",
+    gate: "T2出发大厅", vipCounter: "T2 F岛",
+    vipCounterTip: "F10号柜台",
+    lounge: [
+      { name:"国航贵宾休息室", location:"T1东指廊与T2连接处 118/201登机口附近", hours:"航班运行时段", features:"休息区、饮料" },
+    ],
+  },
+  "大连": {
+    airport: "大连周水子国际机场", terminal: "T1",
+    gate: "出发大厅", vipCounter: "出发大厅",
+    vipCounterTip: "",
+    lounge: [
+      { name:"国航贵宾休息室（国内）", location:"航站楼二层 20号登机口旁", hours:"航班运行时段", features:"休息区、饮料" },
+      { name:"国航贵宾休息室（国际）", location:"航站楼二层 23号登机口旁", hours:"航班运行时段", features:"休息区、饮料" },
+    ],
+  },
+  "贵阳": {
+    airport: "贵阳龙洞堡国际机场", terminal: "T3",
+    gate: "T3出发大厅", vipCounter: "T3 F岛",
+    vipCounterTip: "F04号柜台",
+    lounge: [
+      { name:"国航紫宸贵宾休息室", location:"T3 安检后左转直行150米 407登机口斜对面 扶梯下3楼", hours:"首班前90分钟-末班", features:"热食及小吃、饮料、卫生间、行李寄存" },
+    ],
+  },
+  "乌鲁木齐": {
+    airport: "乌鲁木齐地窝堡国际机场", terminal: "T2",
+    gate: "T2出发大厅", vipCounter: "T2 16号柜台",
+    vipCounterTip: "", lounge: [],
+  },
+  "呼和浩特": {
+    airport: "呼和浩特白塔国际机场", terminal: "T1",
+    gate: "出发大厅", vipCounter: "B岛",
+    vipCounterTip: "B岛值班经理柜台",
+    lounge: [{ name:"国航贵宾休息室", location:"航站楼二楼隔离区东侧 8号登机口附近", hours:"航班运行时段", features:"休息区、饮料" }],
+  },
+  "温州": {
+    airport: "温州龙湾国际机场", terminal: "T2",
+    gate: "T2出发大厅", vipCounter: "T2 D区",
+    vipCounterTip: "D09号柜台",
+    lounge: [{ name:"国航贵宾休息室", location:"T2 安检后右侧", hours:"航班运行时段", features:"休息区、饮料" }],
+  },
+  "拉萨": {
+    airport: "拉萨贡嘎国际机场", terminal: "T1",
+    gate: "出发大厅", vipCounter: "出发大厅",
+    vipCounterTip: "", lounge: [],
+  },
+};
+
+let CURRENT_AIRPORT_CITY = null;
+
+function getAirportInfo(city) {
+  const overrides = getAirportOverrides();
+  const base = AIRPORT_INFO_DEFAULT[city];
+  if (overrides[city]) {
+    return { ...(base || {}), ...overrides[city], lounge: overrides[city].lounge || (base && base.lounge) || [] };
+  }
+  return base ? { ...base } : null;
+}
+
+function renderAirportCityChips() {
+  const search = (document.getElementById('airportSearch').value || '').trim();
+  const cities = Object.keys(AIRPORT_INFO_DEFAULT).filter(c => !search || c.includes(search));
+  const chips = cities.map(c =>
+    '<div class="airport-city-chip ' + (CURRENT_AIRPORT_CITY === c ? 'active' : '') + '" onclick="selectAirportCity(\'' + c + '\')">' + c + '</div>'
+  ).join('');
+  const custom = search && !AIRPORT_INFO_DEFAULT[search]
+    ? '<div class="airport-city-chip" onclick="selectAirportCity(\'' + search + '\')">+ 使用 "' + search + '"</div>'
+    : '';
+  document.getElementById('airportCityChips').innerHTML = chips + custom;
+}
+
+function selectAirportCity(city) {
+  CURRENT_AIRPORT_CITY = city;
+  renderAirportCityChips();
+  renderAirportInfo();
+}
+
+function renderAirportInfo() {
+  const city = CURRENT_AIRPORT_CITY;
+  if (!city) { document.getElementById('airportInfoCard').style.display = 'none'; return; }
+  const info = getAirportInfo(city) || { airport:'', terminal:'', gate:'', vipCounter:'', vipCounterTip:'', lounge:[] };
+  document.getElementById('airportInfoCard').style.display = '';
+  document.getElementById('airportInfoTitle').textContent = city + ' · ' + (info.airport || '');
+  document.getElementById('airportInfoEdit').style.display = 'none';
+  document.getElementById('airportInfoDisplay').style.display = '';
+  document.getElementById('airportEditToggleBtn').textContent = '编辑';
+
+  const loungeHtml = (info.lounge && info.lounge.length)
+    ? info.lounge.map(l =>
+      '<div class="lounge-item">' +
+        '<div class="lounge-name">🛋️ ' + (l.name || '') + '</div>' +
+        '<div class="lounge-meta">' +
+          (l.location ? '📍 ' + l.location + '<br>' : '') +
+          (l.hours ? '🕐 ' + l.hours + '<br>' : '') +
+          (l.features ? '✨ ' + l.features : '') +
+        '</div>' +
+      '</div>'
+    ).join('')
+    : '<div class="empty-state" style="padding:12px 0;">暂无休息室信息</div>';
+
+  document.getElementById('airportInfoDisplay').innerHTML =
+    '<div class="airport-info-row"><div class="airport-info-key">航站楼</div><div class="airport-info-val">' + (info.terminal || '-') + '</div></div>' +
+    '<div class="airport-info-row"><div class="airport-info-key">进出口</div><div class="airport-info-val">' + (info.gate || '-') + '</div></div>' +
+    '<div class="airport-info-row"><div class="airport-info-key">VIP值机</div><div class="airport-info-val">' + (info.vipCounter || '-') +
+      (info.vipCounterTip ? '<div class="airport-info-tip">💡 ' + info.vipCounterTip + '</div>' : '') + '</div></div>' +
+    '<div style="margin-top:12px;font-weight:600;font-size:13px;color:var(--text-secondary);margin-bottom:8px;">休息室</div>' +
+    loungeHtml;
+}
+
+function toggleAirportEdit() {
+  const city = CURRENT_AIRPORT_CITY;
+  if (!city) return;
+  const editBox = document.getElementById('airportInfoEdit');
+  const dispBox = document.getElementById('airportInfoDisplay');
+  const btn = document.getElementById('airportEditToggleBtn');
+  if (editBox.style.display === 'none') {
+    const info = getAirportInfo(city) || { airport:'', terminal:'', gate:'', vipCounter:'', vipCounterTip:'' };
+    editBox.innerHTML =
+      '<div class="airport-edit-field"><label>机场全称</label><input type="text" id="editAirportName" value="' + (info.airport || '').replace(/"/g,'&quot;') + '"></div>' +
+      '<div class="airport-edit-field"><label>航站楼</label><input type="text" id="editAirportTerminal" value="' + (info.terminal || '').replace(/"/g,'&quot;') + '"></div>' +
+      '<div class="airport-edit-field"><label>进出口（下车门）</label><input type="text" id="editAirportGate" value="' + (info.gate || '').replace(/"/g,'&quot;') + '"></div>' +
+      '<div class="airport-edit-field"><label>VIP值机柜台</label><input type="text" id="editAirportVip" value="' + (info.vipCounter || '').replace(/"/g,'&quot;') + '"></div>' +
+      '<div class="airport-edit-field"><label>VIP值机说明</label><textarea id="editAirportVipTip">' + (info.vipCounterTip || '') + '</textarea></div>' +
+      '<div style="display:flex;gap:10px;margin-top:16px;">' +
+        '<button class="btn-primary" style="flex:1;" onclick="saveAirportEdit()">保存</button>' +
+        '<button class="btn-secondary" style="flex:1;" onclick="resetAirportToDefault()">恢复预置</button>' +
+      '</div>';
+    editBox.style.display = '';
+    dispBox.style.display = 'none';
+    btn.textContent = '取消编辑';
+  } else {
+    editBox.style.display = 'none';
+    dispBox.style.display = '';
+    btn.textContent = '编辑';
+  }
+}
+
+function saveAirportEdit() {
+  const city = CURRENT_AIRPORT_CITY;
+  if (!city) return;
+  const overrides = getAirportOverrides();
+  const current = getAirportInfo(city) || {};
+  overrides[city] = {
+    ...current,
+    airport: document.getElementById('editAirportName').value,
+    terminal: document.getElementById('editAirportTerminal').value,
+    gate: document.getElementById('editAirportGate').value,
+    vipCounter: document.getElementById('editAirportVip').value,
+    vipCounterTip: document.getElementById('editAirportVipTip').value,
+  };
+  saveAirportOverrides(overrides);
+  renderAirportInfo();
+}
+
+function resetAirportToDefault() {
+  const city = CURRENT_AIRPORT_CITY;
+  if (!city) return;
+  if (!confirm('确定恢复到预置数据？你的本地修改会被清除')) return;
+  const overrides = getAirportOverrides();
+  delete overrides[city];
+  saveAirportOverrides(overrides);
+  renderAirportInfo();
+}
 </script>
 </body>
 </html>
